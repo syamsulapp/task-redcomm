@@ -105,7 +105,8 @@ class NotesController extends Controller
     {
         if ($id > 0) {
             if ($delete = $this->modelNotes->whereId($id)->first()) {
-                $result = $delete->delete();
+                $delete->delete();
+                $result = $this->builder($delete, 'Successfully delete data');
             } else {
                 $result = $this->builder('id not found for delete', 'id tidak di temukan', 422);
             }
