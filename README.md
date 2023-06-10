@@ -143,5 +143,5 @@ localhost:8000 -> sesuaikan dengan base url kalian
 
 ```bash
 #tinggal di import di postman
-https://drive.google.com/file/d/1Ud7wVNzm8HdfBC9hsMZ9b1PJbkMR5hJv/view?usp=sharing
+https://drive.google.com/file/d/1ENCyDWzL35Wa7kPzycwMka-1aPrq8CzD/view?usp=sharing
 ```
