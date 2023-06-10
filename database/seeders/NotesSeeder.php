@@ -17,7 +17,6 @@ class NotesSeeder extends Seeder
             'title' => 'Catatan Harian Ku',
             'desc' => 'semua kegiatan harianku ada di notes ini',
             'text' => '<p>halo semua ini catatan dari kegiatanku</p>',
-            'users_id' => 1,
         ]);
     }
 }

@@ -29,10 +29,8 @@ Route::prefix('v1')->group(function () {
     Route::prefix('notes')->group(function () {
         Route::get('', [NotesController::class, 'index']);
         Route::get('{id}', [NotesController::class, 'show']);
-        Route::middleware('user:api')->group(function () {
-            Route::post('', [NotesController::class, 'store']);
-            Route::put('{id}', [NotesController::class, 'update']);
-            Route::delete('{id}', [NotesController::class, 'destroy']);
-        });
+        Route::post('', [NotesController::class, 'store']);
+        Route::put('{id}', [NotesController::class, 'update']);
+        Route::delete('{id}', [NotesController::class, 'destroy']);
     });
 });

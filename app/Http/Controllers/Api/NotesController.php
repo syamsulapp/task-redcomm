@@ -32,11 +32,10 @@ class NotesController extends Controller
         })->when($request->desc, function ($query) use ($request) {
             return $query->where('desc', 'like', "%{$request->desc}%");
         })
-            ->with('users_id')
             ->orderByDesc('id')
             ->paginate($limit);
 
-        return $this->builder($data->items());
+        return $data;
     }
 
     public function show($id)
@@ -56,7 +55,7 @@ class NotesController extends Controller
     {
         $data = $request->all();
         $validator = Validator::make($data, [
-            'title' => 'required',
+            'title' => 'required|unique:notes,title',
             'desc' => 'required',
             'text' => 'required',
         ]);
@@ -64,7 +63,6 @@ class NotesController extends Controller
         if ($validator->fails()) {
             $result = $this->customError($validator->errors());
         } else {
-            $data['users_id'] = $request->user()->id;
             $result = $this->builder($this->modelNotes->create($data), 'Successfully Create Notes');
         }
         return $result;
@@ -88,7 +86,6 @@ class NotesController extends Controller
         } else {
             if ($id > 0) {
                 if ($update = $this->modelNotes->whereId($id)->first()) {
-                    $data['users_id'] = $request->user()->id; //update foto nya users
                     $update->update($data);
                     $result = $this->builder($update, 'Successfully Update Notes');
                 } else {
