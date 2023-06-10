@@ -136,8 +136,6 @@ localhost:8000 -> sesuaikan dengan base url kalian
 {{base_url}}/api/v1/notes -> POST (menambah data photo) AUTH:YES
 {{base_url}}/api/v1/notes/:id -> PUT (mengubah data photo) AUTH:YES
 {{base_url}}/api/v1/notes/:id -> DELETE (menghapus data photo) AUTH:YES
-{{base_url}}/api/v1/notes/:id/like -> POST (menghapus data photo) AUTH:YES
-{{base_url}}/api/v1/notes/:id/unlike -> POST (menghapus data photo) AUTH:YES
 
 ```
 
