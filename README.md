@@ -1,6 +1,6 @@
 # introduce
 
-<h5>task vhi-web di build menggunakan framework laravel versi 10 dengan versi php 8.2, jadi pastikan versi php yang anda gunakan sudah sesuai</h5>
+<h5>task vhi-web di build menggunakan framework laravel versi 10 dengan versi php 8.2 dan versi composer 2.5.8, jadi pastikan versi php yang anda gunakan sudah sesuai</h5>
 
 <h5>
 aktifkan require module php yang dibutukan untuk menjalankan framework tersebut, beberapa modul yang di harus di aktifkan ialah pdo_mysqli, mysqli, xml  dan mbstring, zip, dan curl
