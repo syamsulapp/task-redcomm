@@ -41,7 +41,12 @@ class NotesController extends Controller
 
     public function show($id)
     {
-        return $this->builder($this->modelNotes->whereId($id)->first());
+        if ($this->modelNotes->whereId($id)->first()) {
+            $result = $this->builder($this->modelNotes->whereId($id)->first());
+        } else {
+            $result = $this->builder('id not found', 'data tidak di temukan', 422);
+        }
+        return $result;
     }
 
     /**

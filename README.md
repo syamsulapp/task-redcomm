@@ -131,13 +131,13 @@ localhost:8000 -> sesuaikan dengan base url kalian
 
 #api tersebut mempunyai endpoint yang sama tetapi dibedakan berdasarkan request method
 #:id yang dimaksud ialah id photos
-{{base_url}}/api/v1/photos -> GET (menampilkan list photo) AUTH: NO
-{{base_url}}/api/v1/photos/:id -> GET (menampilkan detail photo) AUTH: NO
-{{base_url}}/api/v1/photos -> POST (menambah data photo) AUTH:YES
-{{base_url}}/api/v1/photos/:id -> PUT (mengubah data photo) AUTH:YES
-{{base_url}}/api/v1/photos/:id -> DELETE (menghapus data photo) AUTH:YES
-{{base_url}}/api/v1/photos/:id/like -> POST (menghapus data photo) AUTH:YES
-{{base_url}}/api/v1/photos/:id/unlike -> POST (menghapus data photo) AUTH:YES
+{{base_url}}/api/v1/notes -> GET (menampilkan list photo) AUTH: NO
+{{base_url}}/api/v1/notes/:id -> GET (menampilkan detail photo) AUTH: NO
+{{base_url}}/api/v1/notes -> POST (menambah data photo) AUTH:YES
+{{base_url}}/api/v1/notes/:id -> PUT (mengubah data photo) AUTH:YES
+{{base_url}}/api/v1/notes/:id -> DELETE (menghapus data photo) AUTH:YES
+{{base_url}}/api/v1/notes/:id/like -> POST (menghapus data photo) AUTH:YES
+{{base_url}}/api/v1/notes/:id/unlike -> POST (menghapus data photo) AUTH:YES
 
 ```
 
@@ -146,33 +146,4 @@ localhost:8000 -> sesuaikan dengan base url kalian
 ```bash
 #tinggal di import di postman
 https://drive.google.com/file/d/1Ud7wVNzm8HdfBC9hsMZ9b1PJbkMR5hJv/view?usp=sharing
-```
-
-# response list photos
-
-```json
-{
-    "message": "Successfully Data",
-    "data": [
-        {
-            "id": 4,
-            "name": "foto samsul",
-            "caption": "kerja",
-            "tags": "photos",
-            "img": "images/EdVXabBcxFx47EyA6KHtmOx4NHt0qW9xBWwIKzAY.png",
-            "users_id": 3,
-            "created_at": "2023-06-09T04:57:18.000000Z",
-            "updated_at": "2023-06-09T04:57:18.000000Z",
-            "like": [ #object like berisikan list orang-orang yang memberikan like untuk foto tersebut
-                {
-                    "id": 33,
-                    "photos_id": 4,
-                    "users_id": 1,
-                    "created_at": "2023-06-09T04:57:48.000000Z",
-                    "updated_at": "2023-06-09T04:57:48.000000Z"
-                }
-            ]
-        }
-    ]
-}
 ```
