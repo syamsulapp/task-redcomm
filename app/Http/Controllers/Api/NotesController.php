@@ -76,7 +76,6 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $data = $request->all();
         $validator = Validator::make($data, [
             'title' => 'required|string',
