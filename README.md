@@ -90,7 +90,7 @@ php artisan migrate:rollback
 
 ```
 
-# Endpoint Auth API
+# Endpoint Auth API (jika ingin menggunakan fitur AUTH)
 
 ```Bash
 #baseUrl
@@ -110,7 +110,7 @@ localhost:8000 -> sesuaikan dengan base url kalian
 
 ```
 
-# Access Ke Endpoint API Yang Menggunakan Session
+# Access Ke Endpoint API Yang Menggunakan Session (jika ingin melakukan ini)
 
 <h5>jika ingin mengakses api yang menggunakan session, maka anda harus mengirimkan 2 buah object/param seperti dibawah ini, kirim ketiga buah object tersebut melalui request header</h5>
 
@@ -127,15 +127,15 @@ localhost:8000 -> sesuaikan dengan base url kalian
 
 ```Bash
 
-# Endpoint API Master Data PHOTOS, like dan unlike photos
-
+# Endpoint API Master Data NOTES, like dan unlike NOTES
+# API yang dibuat merupakan api public sehingga aksesnya tidak perlu menggunakan session
 #api tersebut mempunyai endpoint yang sama tetapi dibedakan berdasarkan request method
-#:id yang dimaksud ialah id photos
+#:id yang dimaksud ialah id NOTES
 {{base_url}}/api/v1/notes -> GET (menampilkan list photo) AUTH: NO
 {{base_url}}/api/v1/notes/:id -> GET (menampilkan detail photo) AUTH: NO
-{{base_url}}/api/v1/notes -> POST (menambah data photo) AUTH:YES
-{{base_url}}/api/v1/notes/:id -> PUT (mengubah data photo) AUTH:YES
-{{base_url}}/api/v1/notes/:id -> DELETE (menghapus data photo) AUTH:YES
+{{base_url}}/api/v1/notes -> POST (menambah data photo) AUTH:NO
+{{base_url}}/api/v1/notes/:id -> PUT (mengubah data photo) AUTH:NO
+{{base_url}}/api/v1/notes/:id -> DELETE (menghapus data photo) AUTH:NO
 
 ```
 
