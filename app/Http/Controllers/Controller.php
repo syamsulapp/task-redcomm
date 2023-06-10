@@ -44,4 +44,16 @@ class Controller extends BaseController
         }
         return response()->json(['message' => 'data tidak lengkap', 'errors' => $res], 422);
     }
+
+    public function getLimit($data)
+    {
+        $limit = 10; // max query 10 content per page
+
+        if (isset($data)) {
+            if ($limit >= $data->limit) {
+                $limit = $data->limit;
+            }
+        }
+        return $limit;
+    }
 }

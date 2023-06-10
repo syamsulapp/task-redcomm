@@ -22,18 +22,13 @@ class NotesController extends Controller
 
     public function index(Request $request)
     {
-        $limit = 10; // max query 10 content per page
-
-        if ($limit >= $request->limit) {
-            $limit = $request->limit;
-        }
         $data = $this->modelNotes->when($request->title, function ($query) use ($request) {
             return $query->where('title', 'like', "%{$request->title}%");
         })->when($request->desc, function ($query) use ($request) {
             return $query->where('desc', 'like', "%{$request->desc}%");
         })
             ->orderByDesc('id')
-            ->paginate($limit);
+            ->paginate($this->getLimit($request));
 
         return $data;
     }
