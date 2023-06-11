@@ -145,3 +145,9 @@ localhost:8000 -> sesuaikan dengan base url kalian
 #tinggal di import di postman
 https://drive.google.com/file/d/1ENCyDWzL35Wa7kPzycwMka-1aPrq8CzD/view?usp=sharing
 ```
+
+# unit test notes crud
+
+```bash
+php artisan test
+```
