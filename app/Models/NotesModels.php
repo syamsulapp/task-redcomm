@@ -9,7 +9,7 @@ class NotesModels extends Model
 {
     protected $table = 'notes';
 
-    protected $fillable = ['title', 'desc', 'text'];
+    protected $fillable = ['title', 'desc', 'text', 'created_at', 'updated_at'];
 
     use HasFactory;
 }
