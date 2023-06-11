@@ -143,7 +143,7 @@ localhost:8000 -> sesuaikan dengan base url kalian
 
 ```bash
 #tinggal di import di postman
-https://drive.google.com/file/d/1ENCyDWzL35Wa7kPzycwMka-1aPrq8CzD/view?usp=sharing
+https://drive.google.com/file/d/142qfn9u75wNfUdo5wfs0myhfwCf8HcDU/view?usp=sharing
 ```
 
 # unit test notes crud
