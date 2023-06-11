@@ -22,12 +22,12 @@ class NotesController extends Controller
 
     public function index(Request $request)
     {
-        $data = $this->modelNotes->when($request->title, function ($query) use ($request) {
-            return $query->where('title', 'like', "%{$request->title}%");
-        })->when($request->desc, function ($query) use ($request) {
-            return $query->where('desc', 'like', "%{$request->desc}%");
-        })
-            ->orderByDesc('id')
+        $data = $this->modelNotes
+            ->when($request->title, function ($query) use ($request) {
+                return $query->where('title', 'like', "%{$request->title}%");
+            })->when($request->desc, function ($query) use ($request) {
+                return $query->where('desc', 'like', "%{$request->desc}%");
+            })->orderByDesc('id')
             ->paginate($this->getLimit($request));
 
         return $data;
@@ -35,8 +35,13 @@ class NotesController extends Controller
 
     public function show($id)
     {
-        if ($this->modelNotes->whereId($id)->first()) {
-            $result = $this->builder($this->modelNotes->whereId($id)->first());
+        if ($this->modelNotes
+            ->whereId($id)
+            ->first()
+        ) {
+            $result = $this->builder($this->modelNotes
+                ->whereId($id)
+                ->first());
         } else {
             $result = $this->builder('id not found', 'data tidak di temukan', 422);
         }
@@ -80,7 +85,10 @@ class NotesController extends Controller
             $result = $this->customError($validator->errors());
         } else {
             if ($id > 0) {
-                if ($update = $this->modelNotes->whereId($id)->first()) {
+                if ($update = $this->modelNotes
+                    ->whereId($id)
+                    ->first()
+                ) {
                     $update->update($data);
                     $result = $this->builder($update, 'Successfully Update Notes');
                 } else {
@@ -99,7 +107,10 @@ class NotesController extends Controller
     public function destroy($id)
     {
         if ($id > 0) {
-            if ($delete = $this->modelNotes->whereId($id)->first()) {
+            if ($delete = $this->modelNotes
+                ->whereId($id)
+                ->first()
+            ) {
                 $delete->delete();
                 $result = $this->builder($delete, 'Successfully delete data');
             } else {
