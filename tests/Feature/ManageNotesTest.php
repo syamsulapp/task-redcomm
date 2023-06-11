@@ -67,6 +67,9 @@ class ManageNotesTest extends TestCase
                 ]
             ]);
     }
+    /**
+     * memvalidasi request yang dimasukan
+     */
     public function test_example_validate_store(): void
     {
         $this->json('POST', 'api/v1/notes', ['Accept' => 'application/json'])
