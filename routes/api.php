@@ -26,7 +26,8 @@ Route::prefix('v1')->group(function () {
             Route::post('logout', [Auth::class, 'logout']);
         });
     });
-    Route::prefix('notes')->group(function () {
+
+    Route::group(['prefix' => 'notes', 'middleware' => 'user:api'], function () {
         Route::get('', [NotesController::class, 'index']);
         Route::get('{id}', [NotesController::class, 'show']);
         Route::post('', [NotesController::class, 'store']);
